@@ -1,17 +1,22 @@
 import React from 'react'
 import Layout from "../components/Layout";
 
-import { Button } from 'reactstrap';
+import Square from "../components/features/Square";
+import Count from "../components/features/Count";
+import Carousel from "../components/Carousel";
+import Container from "../components/Container";
+import Road from "../components/features/Road";
+import Electricity from "../components/features/Electricity";
 
 const Home = () => (
   <Layout>
-    <div className="hero">
-      <h1 className="title">Welcome to Next!</h1>
-      <p className="description">
-        To get started, edit <code>pages/index.js</code> and save to reload.
-      </p>
-        <Button color="danger">Danger!</Button>
-    </div>
+      <Carousel/>
+      <Container>
+          <Electricity/>
+          <Road/>
+          <Count/>
+          <Square/>
+      </Container>
   </Layout>
 );
 

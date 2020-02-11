@@ -1,13 +1,15 @@
 import React from 'react'
 import Head from "./Head";
 import Nav from "./Nav";
+import Footer from "./Footer";
 
-const Layout = ({ children }) => (
-    <div className="container">
+const Layout = ({children}) => (
+    <>
         <Head/>
         <Nav/>
         {children}
-    </div>
+        <Footer/>
+    </>
 );
 
 export default Layout

@@ -16,34 +16,26 @@ import {
 import Link from "next/link";
 
 const Nav = () => {
-
     const [isOpen, setIsOpen] = useState(false);
-
     const toggle = () => setIsOpen(!isOpen);
 
-    return <Navbar color="light" light expand="md">
+    const items = [
+        {name: 'Главная', url: '/'},
+        {name: 'Участки в продаже', url: '/plants'},
+        {name: 'Контакты', url: '/contacts'},
+    ];
 
-        <Link href="/">
-            <NavbarBrand href="/">СНТ "Дубрава-3"</NavbarBrand>
-        </Link>
+    return <Navbar color="dark" dark fixed="top" expand="md">
         <NavbarToggler onClick={toggle}/>
         <Collapse isOpen={isOpen} navbar>
             <TBNav className="mr-auto" navbar>
-                <NavItem>
-                    <Link href="/">
-                        <NavLink href="/">Главная</NavLink>
-                    </Link>
-                </NavItem>
-                <NavItem>
-                    <Link href="/plants">
-                        <NavLink href="/plants">Участки</NavLink>
-                    </Link>
-                </NavItem>
-                <NavItem>
-                    <Link href="/contacts">
-                        <NavLink href="/contacts">Контакты</NavLink>
-                    </Link>
-                </NavItem>
+                {items.map((item) => (
+                    <NavItem key={item.url}>
+                        <Link href={item.url}>
+                            <NavLink href={item.url}>{item.name}</NavLink>
+                        </Link>
+                    </NavItem>
+                ))}
             </TBNav>
         </Collapse>
     </Navbar>
