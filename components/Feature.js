@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Feature = ({heading, children, order }) => {
+const Feature = ({heading, children, order}) => {
     return <>
         <div className="row feature">
             <div className={`col-md-7 ${order ? 'order-md-2' : ''}`}>
@@ -18,6 +18,27 @@ const Feature = ({heading, children, order }) => {
             </div>
         </div>
         <hr className="feature-divider"/>
+        <style jsx>{`
+            .feature-divider {
+              margin: 5rem 0;
+            }
+            
+            .feature-heading {
+              font-weight: 300;
+              line-height: 1;
+              letter-spacing: -.05rem;
+            }
+            @media (min-width: 62em) {
+              .feature-heading {
+                margin-top: 7rem;
+              }
+            }
+            @media (min-width: 40em) {
+              .feature-heading {
+                font-size: 50px;
+              }
+            }
+        `}</style>
     </>
 };
 

@@ -1,6 +1,5 @@
 import Document, {Html, Head, Main, NextScript} from 'next/document'
 import React from "react";
-import Footer from "../components/Footer";
 
 class MyDocument extends Document {
     static async getInitialProps(ctx) {
@@ -19,7 +18,7 @@ class MyDocument extends Document {
 
                 <style jsx global>{`
                    #__next {
-                    height: 100% !important;
+                    height: 100%!important;
                     flex-direction: column!important;
                     display: flex!important; 
                     }
